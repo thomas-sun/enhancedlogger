@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcjq6e1of1nem"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_3nayd"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3nayd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "StandardLogHandler
+
+"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "ANSICodeLogHandler"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "BBCodeLogHandler
+"
+
+[node name="Button4" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "BBCodeLogHandler
+BBCodeLogFilter
+FileLogHandler"
+
+[node name="Button5" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "custom"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+offset_top = 100.0
+offset_right = 57.0
+offset_bottom = 140.0
+
+[node name="Button" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "debug
+"
+
+[node name="Button2" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "info"
+
+[node name="Button3" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "warning"
+
+[node name="Button4" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "error"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+offset_left = 3.0
+offset_top = 167.0
+offset_right = 60.0
+offset_bottom = 207.0
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer3"]
+layout_mode = 2
+text = "bbcode"
+
+[node name="Button" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+text = "make color"
+
+[node name="Button2" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+text = "colorize"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_StandardLogHandler_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_ANSICodeLogHandler_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_BBCodeLogHandler_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_test_filter_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button5" to="." method="_on_custom_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Button" to="." method="_on_debug_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Button2" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Button3" to="." method="_on_warning_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Button4" to="." method="_on_error_pressed"]
+[connection signal="toggled" from="HBoxContainer3/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="HBoxContainer3/Button" to="." method="_on_make_color_pressed"]
+[connection signal="pressed" from="HBoxContainer3/Button2" to="." method="_oncolorize_pressed"]
